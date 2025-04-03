@@ -1,3 +1,6 @@
 [submodule "ivp"]
 	path = ivp
 	url = https://github.com/nillerusr/source-physics
+[submodule "external/v8"]
+	path = external/v8
+	url = https://github.com/v8/v8
