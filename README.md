@@ -18,4 +18,5 @@
 #echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 ```
 2. Run `chmod +x -R ./devtools/` inside the Git repository.
-3. Finally run `MAKE_JOBS=1 make -f csgo_partner.mak -j1`, change the -j(x) to your liking.
+3. Run the VPC creation script.
+4. Finally run `MAKE_JOBS=1 make -f csgo_partner.mak -j1`, change the -j(x) to your liking.
