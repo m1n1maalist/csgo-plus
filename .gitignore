@@ -292,4 +292,4 @@ paket-files/
 *_linux32.mak
 *.project
 *_linux64.mak
-
+*_csgo.mak
