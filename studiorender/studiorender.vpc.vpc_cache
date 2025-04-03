@@ -10,4 +10,12 @@
 			"1"		"studiorender.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"studiorender_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"studiorender_linux64.mak"
+		}
+	}
 }

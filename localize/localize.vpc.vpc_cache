@@ -10,4 +10,12 @@
 			"1"		"localize.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"localize_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"localize_linux64.mak"
+		}
+	}
 }

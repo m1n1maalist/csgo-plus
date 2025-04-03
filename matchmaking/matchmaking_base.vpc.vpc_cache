@@ -10,4 +10,12 @@
 			"1"		"matchmakingbase.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"matchmakingbase_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"matchmakingbase_linux64.mak"
+		}
+	}
 }

@@ -10,4 +10,12 @@
 			"1"		"meshutils.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"meshutils_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"meshutils_linux64.mak"
+		}
+	}
 }

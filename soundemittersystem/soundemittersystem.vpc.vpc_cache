@@ -10,4 +10,12 @@
 			"1"		"soundemittersystem.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"soundemittersystem_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"soundemittersystem_linux64.mak"
+		}
+	}
 }

@@ -10,4 +10,12 @@
 			"1"		"materialsystem.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"materialsystem_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"materialsystem_linux64.mak"
+		}
+	}
 }

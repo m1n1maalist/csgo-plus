@@ -10,4 +10,12 @@
 			"1"		"soundsystem_lowlevel.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"soundsystem_lowlevel_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"soundsystem_lowlevel_linux64.mak"
+		}
+	}
 }

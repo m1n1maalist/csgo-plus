@@ -10,4 +10,12 @@
 			"1"		"vguimatsurface.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"vguimatsurface_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"vguimatsurface_linux64.mak"
+		}
+	}
 }

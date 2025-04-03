@@ -10,4 +10,12 @@
 			"1"		"matsys_controls.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"matsys_controls_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"matsys_controls_linux64.mak"
+		}
+	}
 }

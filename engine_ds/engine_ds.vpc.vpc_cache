@@ -10,4 +10,12 @@
 			"1"		"engine_ds.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"engine_ds_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"engine_ds_linux64.mak"
+		}
+	}
 }

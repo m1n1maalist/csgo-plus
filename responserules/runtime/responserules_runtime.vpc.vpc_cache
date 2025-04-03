@@ -10,4 +10,12 @@
 			"1"		"responserules_runtime.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"responserules_runtime_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"responserules_runtime_linux64.mak"
+		}
+	}
 }

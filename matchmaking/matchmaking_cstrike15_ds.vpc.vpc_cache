@@ -10,4 +10,12 @@
 			"1"		"matchmaking_ds_csgo.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"matchmaking_ds_linux64_csgo.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"matchmaking_ds_linux64_csgo.mak"
+		}
+	}
 }

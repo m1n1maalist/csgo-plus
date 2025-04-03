@@ -10,4 +10,12 @@
 			"1"		"quickhull.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"quickhull_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"quickhull_linux64.mak"
+		}
+	}
 }

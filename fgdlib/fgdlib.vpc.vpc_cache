@@ -10,4 +10,12 @@
 			"1"		"fgdlib.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"fgdlib_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"fgdlib_linux64.mak"
+		}
+	}
 }

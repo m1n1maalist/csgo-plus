@@ -10,4 +10,12 @@
 			"1"		"serverbrowser.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"serverbrowser_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"serverbrowser_linux64.mak"
+		}
+	}
 }

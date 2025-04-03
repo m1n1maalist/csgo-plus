@@ -10,4 +10,12 @@
 			"1"		"mathlib_extended.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"mathlib_extended_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"mathlib_extended_linux64.mak"
+		}
+	}
 }

@@ -10,4 +10,12 @@
 			"1"		"resourcefile.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"resourcefile_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"resourcefile_linux64.mak"
+		}
+	}
 }

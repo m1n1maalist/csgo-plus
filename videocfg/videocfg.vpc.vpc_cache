@@ -10,4 +10,12 @@
 			"1"		"videocfg.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"videocfg_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"videocfg_linux64.mak"
+		}
+	}
 }

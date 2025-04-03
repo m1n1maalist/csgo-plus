@@ -10,4 +10,12 @@
 			"1"		"unitlib.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"unitlib_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"unitlib_linux64.mak"
+		}
+	}
 }

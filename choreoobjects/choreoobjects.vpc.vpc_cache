@@ -10,4 +10,12 @@
 			"1"		"choreoobjects.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"choreoobjects_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"choreoobjects_linux64.mak"
+		}
+	}
 }

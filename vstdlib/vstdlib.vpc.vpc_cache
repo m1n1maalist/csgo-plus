@@ -10,4 +10,12 @@
 			"1"		"vstdlib.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"vstdlib_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"vstdlib_linux64.mak"
+		}
+	}
 }

@@ -1,0 +1,11 @@
+"vpc_cache"
+{
+	"linux64"
+	{
+		"CRCFile"		"scaleformui_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"scaleformui_linux64.mak"
+		}
+	}
+}

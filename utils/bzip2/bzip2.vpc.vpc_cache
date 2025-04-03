@@ -10,4 +10,12 @@
 			"1"		"bzip2.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"bzip2_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"bzip2_linux64.mak"
+		}
+	}
 }

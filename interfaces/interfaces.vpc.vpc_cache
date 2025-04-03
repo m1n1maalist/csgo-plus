@@ -10,4 +10,12 @@
 			"1"		"interfaces.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"interfaces_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"interfaces_linux64.mak"
+		}
+	}
 }

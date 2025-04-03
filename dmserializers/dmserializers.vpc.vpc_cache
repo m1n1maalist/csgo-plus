@@ -10,4 +10,12 @@
 			"1"		"dmserializers.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"dmserializers_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"dmserializers_linux64.mak"
+		}
+	}
 }

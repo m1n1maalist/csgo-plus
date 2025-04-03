@@ -10,4 +10,12 @@
 			"1"		"dedicated_main.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"dedicated_main_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"dedicated_main_linux64.mak"
+		}
+	}
 }

@@ -10,4 +10,12 @@
 			"1"		"vgui_controls.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"vgui_controls_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"vgui_controls_linux64.mak"
+		}
+	}
 }

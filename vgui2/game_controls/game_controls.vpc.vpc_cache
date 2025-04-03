@@ -10,4 +10,12 @@
 			"1"		"game_controls.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"game_controls_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"game_controls_linux64.mak"
+		}
+	}
 }

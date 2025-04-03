@@ -10,4 +10,12 @@
 			"1"		"bitmap_byteswap.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"bitmap_byteswap_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"bitmap_byteswap_linux64.mak"
+		}
+	}
 }

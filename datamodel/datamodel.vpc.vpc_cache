@@ -10,4 +10,12 @@
 			"1"		"datamodel.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"datamodel_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"datamodel_linux64.mak"
+		}
+	}
 }

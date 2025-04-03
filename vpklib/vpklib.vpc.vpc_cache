@@ -10,4 +10,12 @@
 			"1"		"vpklib.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"vpklib_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"vpklib_linux64.mak"
+		}
+	}
 }

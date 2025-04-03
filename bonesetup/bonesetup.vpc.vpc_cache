@@ -10,4 +10,12 @@
 			"1"		"bonesetup.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"bonesetup_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"bonesetup_linux64.mak"
+		}
+	}
 }

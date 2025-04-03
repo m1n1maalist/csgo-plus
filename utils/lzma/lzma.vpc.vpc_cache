@@ -1,0 +1,11 @@
+"vpc_cache"
+{
+	"linux64"
+	{
+		"CRCFile"		"lzma_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"lzma_linux64.mak"
+		}
+	}
+}

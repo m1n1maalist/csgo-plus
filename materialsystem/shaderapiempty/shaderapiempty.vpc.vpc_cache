@@ -10,4 +10,12 @@
 			"1"		"shaderapiempty.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"shaderapiempty_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"shaderapiempty_linux64.mak"
+		}
+	}
 }

@@ -10,4 +10,12 @@
 			"1"		"tier0.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"tier0_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"tier0_linux64.mak"
+		}
+	}
 }

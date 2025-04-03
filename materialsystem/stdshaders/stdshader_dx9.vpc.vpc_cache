@@ -10,4 +10,12 @@
 			"1"		"stdshader_dx9.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"stdshader_dx9_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"stdshader_dx9_linux64.mak"
+		}
+	}
 }

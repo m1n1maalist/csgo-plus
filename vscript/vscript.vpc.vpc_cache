@@ -10,4 +10,12 @@
 			"1"		"vscript.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"vscript_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"vscript_linux64.mak"
+		}
+	}
 }

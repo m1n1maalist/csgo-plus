@@ -10,4 +10,12 @@
 			"1"		"valve_avi.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"valve_avi_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"valve_avi_linux64.mak"
+		}
+	}
 }

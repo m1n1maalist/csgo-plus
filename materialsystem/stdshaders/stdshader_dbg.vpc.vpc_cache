@@ -10,4 +10,12 @@
 			"1"		"stdshader_dbg.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"stdshader_dbg_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"stdshader_dbg_linux64.mak"
+		}
+	}
 }

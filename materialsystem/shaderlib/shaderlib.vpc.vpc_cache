@@ -10,4 +10,12 @@
 			"1"		"shaderlib.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"shaderlib_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"shaderlib_linux64.mak"
+		}
+	}
 }

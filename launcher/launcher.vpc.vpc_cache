@@ -10,4 +10,12 @@
 			"1"		"launcher.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"launcher_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"launcher_linux64.mak"
+		}
+	}
 }

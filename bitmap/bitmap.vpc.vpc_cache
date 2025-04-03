@@ -10,4 +10,12 @@
 			"1"		"bitmap.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"bitmap_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"bitmap_linux64.mak"
+		}
+	}
 }

@@ -10,4 +10,12 @@
 			"1"		"filesystem_stdio.vcxproj.filters"
 		}
 	}
+	"linux64"
+	{
+		"CRCFile"		"filesystem_stdio_linux64.mak.vpc_crc"
+		"OutputFiles"
+		{
+			"0"		"filesystem_stdio_linux64.mak"
+		}
+	}
 }
