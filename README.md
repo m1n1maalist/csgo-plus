@@ -15,7 +15,7 @@
 1. Firstly, add this script under the name "p4" in /usr/local/bin:
 ```bash
 #!/bin/bash
-#echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
+echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 ```
 2. Run `chmod +x -R ./devtools/` inside the Git repository.
 3. Run the VPC creation script.
