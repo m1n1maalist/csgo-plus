@@ -7,6 +7,7 @@
 $Macro SRCDIR		"..\.."
 $Macro OUTBINDIR	"$SRCDIR\devtools\bin"		[!$OSX32]
 $Macro OUTBINDIR	"$SRCDIR\devtools\bin\osx"	[$OSX32]
+$Macro OUTBINDIR	"$SRCDIR\devtools\bin\web"	[$EMSCRIPTEN]
 
 $Include "$SRCDIR\vpc_scripts\source_dll_win32_base.vpc" [!$OSX32]
 $Include "$SRCDIR\vpc_scripts\source_dll_linux_base.vpc" [$OSX32]
@@ -21,6 +22,7 @@ $Configuration
 	$Compiler
 	{
 		$PreprocessorDefinitions		"$BASE;_USE_32BIT_TIME_T;_USRDLL"
+		$PreprocessorDefinitions		"$BASE;WEB" [$EMSCRIPTEN]
 		$DisableSpecificWarnings		"4005"
 		$AdditionalOptions				"/MP1"
 	}

@@ -32,6 +32,8 @@ static const char *g_pOption_Description = "$Description";
 static const char *g_pOption_Outputs = "$Outputs";
 
 static const char *k_pszBase_Makefile = "$(SRCROOT)/devtools/makefile_base_posix.mak";
+static const char *k_pszBase_Emscripten_Makefile = "$(SRCROOT)/devtools/makefile_base_web.mak";
+
 
 // These are the only properties we care about for makefiles.
 static const char *g_pRelevantProperties[] =
@@ -545,7 +547,11 @@ public:
 		fprintf( fp, "# Include the base makefile now.\n" );
 		if ( g_pVPC->FindOrCreateConditional( "POSIX", false, CONDITIONAL_NULL ) )
 		{
+#if defined (WEB)
+			fprintf( fp, "include %s\n\n\n", k_pszBase_Emscripten_Makefile );
+#else
 			fprintf( fp, "include %s\n\n\n", k_pszBase_Makefile );
+#endif
 		}
 
 
@@ -643,6 +649,7 @@ public:
 				V_StripExtension( sObjFilename, sPFileBase, sizeof( sPFileBase ) );
 
 				// include the .P file which will include dependency information.
+#if !defined (WEB)
 				fprintf( fp, "ifneq (clean, $(findstring clean, $(MAKECMDGOALS)))\n" );
 				fprintf( fp, "\n%s.P: %s $(PWD)/%s %s $(OTHER_DEPENDENCIES)\n", sPFileBase, UsePOSIXSlashes( sAbsFilename ), g_pVPC->GetOutputFilename(), 
 						 g_pVPC->FindOrCreateConditional( "POSIX", false, CONDITIONAL_NULL ) == NULL ? "" : k_pszBase_Makefile );			
@@ -656,6 +663,21 @@ public:
 						 g_pVPC->FindOrCreateConditional( "POSIX", false, CONDITIONAL_NULL ) == NULL ? "" : k_pszBase_Makefile );
 				fprintf( fp, "\t$(PRE_COMPILE_FILE)\n" );
 				fprintf( fp, "\t$(COMPILE_FILE) $(POST_COMPILE_FILE)\n" );
+#else
+				fprintf( fp, "ifneq (clean, $(findstring clean, $(MAKECMDGOALS)))\n" );
+				fprintf( fp, "\n%s.P: %s $(PWD)/%s %s $(OTHER_DEPENDENCIES)\n", sPFileBase, UsePOSIXSlashes( sAbsFilename ), g_pVPC->GetOutputFilename(),
+						 g_pVPC->FindOrCreateConditional( "POSIX", false, CONDITIONAL_NULL ) == NULL ? "" : k_pszBase_Emscripten_Makefile );
+				fprintf( fp, "\t$(GEN_DEP_FILE)\n");
+
+				fprintf( fp, "\n-include %s.P\n", sPFileBase );
+				fprintf( fp, "endif\n" );
+
+
+				fprintf( fp, "\n%s : $(PWD)/%s $(PWD)/%s %s\n", sObjFilename, sAbsFilename, g_pVPC->GetOutputFilename(),
+						 g_pVPC->FindOrCreateConditional( "POSIX", false, CONDITIONAL_NULL ) == NULL ? "" : k_pszBase_Emscripten_Makefile );
+				fprintf( fp, "\t$(PRE_COMPILE_FILE)\n" );
+				fprintf( fp, "\t$(COMPILE_FILE) $(POST_COMPILE_FILE)\n" );
+#endif
 
 			}
 		}
