@@ -13,7 +13,9 @@
 - KDevelop support (GUI compiler, instead of using CLI makefiles.)
 
 
-## Building
+## Buidling
+
+### Building (Linux)
 1. Firstly, add this script under the name "p4" in /usr/local/bin:
 ```bash
 #!/bin/bash
@@ -22,3 +24,9 @@ echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 2. Run `chmod +x -R ./devtools/` inside the Git repository.
 3. Run the VPC creation script.
 4. Finally run `MAKE_JOBS=1 make -f csgo_partner.mak -j1`, change the -j(x) to your liking.
+
+### Building (Emscripten)
+1. This is based on the Linux guide, since this only works with Linux. So follow all of those steps.
+2. In the VPC creation script, add `/define:EMSCRIPTEN`, and rerun that script.
+3. Run `MAKE_JOBS=1 make -f csgo_partner.mak -j1`
+4. And finally run `emrun --no_browser --port 8080 .`
