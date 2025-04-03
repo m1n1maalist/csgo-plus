@@ -14,7 +14,7 @@
 #  +	command is executed even if Make is invoked in "do not exec" mode
 
 OS := $(shell uname)
-HOSTNAME := $(shell hostname)
+HOSTNAME := $(shell cat /etc/hostname)
 
 IDENTIFY_CURRENT_MAKEFILE_RELATIVE_FUNCTION = $(word $(words $(MAKEFILE_LIST)),$(MAKEFILE_LIST))
 MAKEFILE_BASE_POSIX_MAK := $(call IDENTIFY_CURRENT_MAKEFILE_RELATIVE_FUNCTION)
