@@ -11,7 +11,7 @@
 - Forward+ Renderer
 - Vulkan Support.
 - KDevelop support (GUI compiler, instead of using CLI makefiles.)
-
+- Panorama UI recreation.
 
 ## Buidling
 
