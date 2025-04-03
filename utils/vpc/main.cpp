@@ -126,13 +126,9 @@ bool CVPC::Init( int argc, char **argv )
 		m_nArgc--;
 	}
 
-	Log_Msg( LOG_VPC, "VPC - Valve Project Creator For " );
-#ifdef POSIX
-	Log_Msg( LOG_VPC, "XCode and Makefiles (Build: %s %s)\n", __DATE__, __TIME__ );
-#else
-	Log_Msg( LOG_VPC, "Visual Studio, Xbox 360, PlayStation 3 (Build: %s %s)\n", __DATE__, __TIME__ );
-#endif
-	Log_Msg( LOG_VPC, "(C) Copyright 1996-2010, Valve Corporation, All rights reserved.\n" );
+	Log_Msg( LOG_VPC, "VPC+ - Valve Project Creator Plus  For " );
+	Log_Msg( LOG_VPC, "Visual Studio, Xbox 360, XCode, Makefiles,  PlayStation 3, and Emscripten (Build: %s %s)\n", __DATE__, __TIME__ );
+	Log_Msg( LOG_VPC, "(C) Copyright __DATE__, Minimalist, All rights reserved.\n" );
 	Log_Msg( LOG_VPC, "\n" );
 
 	return true;
@@ -574,11 +570,13 @@ void CVPC::SpewUsage( void )
 			Log_Msg( LOG_VPC, "[/f]:          Force generate .vcproj, otherwise use crc checks\n" );
 			Log_Msg( LOG_VPC, "[/dp]:         Decorate project names with platform\n" );
 			Log_Msg( LOG_VPC, "[/testmode]:   Override output .vcproj file to be named 'test.vcproj'\n" );
+// Wish there was something like this but for GCC and Emscripten
+#ifdef _WIN32
 			Log_Msg( LOG_VPC, "[/2013]:       Generate projects and solutions for Visual Studio 2013 [default]\n" );
 			Log_Msg( LOG_VPC, "[/2012]:       Generate projects and solutions for Visual Studio 2012\n" );
 			Log_Msg( LOG_VPC, "[/2010]:       Generate projects and solutions for Visual Studio 2010\n" );
 			Log_Msg( LOG_VPC, "[/2005]:       Generate projects and solutions for Visual Studio 2005\n" );
-
+#endif
 			Log_Msg( LOG_VPC, "\n--- Help ---\n" );
 			Log_Msg( LOG_VPC, "[/h]:          Help\n" );
 			Log_Msg( LOG_VPC, "[/?]:          Help\n" );
