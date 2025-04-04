@@ -10,6 +10,14 @@
 ## Features
 - **Web support** - You can play CSGO on any platform thanks to this!
 
+## FAQ
+- Q: What are some supported Operating Systems?
+- A: All supported OSes for compiling can be found [here](#supported-oses)
+- Q: Does this even compile?
+- A: Yes, this compiles on some Linux distributions. But I am skeptical with Windows since I haven't tested it.
+- Q: Does this have a Discord server?
+- A: [Yes](https://discord.gg/5Gpr5TSkJ4).
+
 ## Buidling
 
 ### Building (Linux)
