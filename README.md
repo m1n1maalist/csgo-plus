@@ -25,10 +25,7 @@ pacman -S apt base-devel dpkg gcc g++
 ```
 But if you're on [Debian Linux](https://www.debian.org/distrib/)-based distribution, install the following dependencies:
 ```bash
-# If you're on x86 run;
-apt-get install build-essential
-# If you're on x86_64 run;
-sudo apt-get install gcc-multilib g++-multilib
+apt-get install build-essential gcc-multilib libgl-dev g++-multilib
 ```
 Secondly, as `root`, go to the `/` directory, and run the following commands:
 ```bash
@@ -43,6 +40,8 @@ cd /valve/steam-runtime/bin
 ln -s $(which g++) g++
 ln -s $(which gcc) gcc
 ```
+> [!TIP]
+> Tip: Run `ln -s usr/include/linux/sysctl.h /usr/include/sys/sysctl.h`, to avoid errors. This will be fixed in the future.
 
 ### Building (Linux)
 1. Firstly, add this script under the name "p4" in /usr/local/bin:
