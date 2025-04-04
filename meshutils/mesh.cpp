@@ -4,6 +4,9 @@
 //
 //===========================================================================//
 
+#pragma once
+#pragma GCC diagnostic ignored "-Woverflow"
+
 #include "mesh.h"
 #include "tier1/utlbuffer.h"
 #include "tier1/utlhash.h"

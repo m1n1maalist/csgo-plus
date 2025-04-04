@@ -13,12 +13,18 @@
 #define PLATFORM_64BITS 1
 #endif
 
+#pragma once
+
 #if defined( LINUX ) && ((__GNUC__ * 100) + __GNUC_MINOR__) >= 406
 // based on some Jonathan Wakely macros on the net...
 #define GCC_DIAG_STR(s) #s
 #define GCC_DIAG_JOINSTR(x,y) GCC_DIAG_STR(x ## y)
 #define GCC_DIAG_DO_PRAGMA(x) _Pragma (#x)
 #define GCC_DIAG_PRAGMA(x)	GCC_DIAG_DO_PRAGMA(GCC diagnostic x)
+
+#pragma GCC diagnostic ignored "-Wignored-attributes"
+// RISKY!!
+//#pragma GCC diagnostic ignored "-fPermissive"
 
 #define GCC_DIAG_PUSH_OFF(x)	GCC_DIAG_PRAGMA(push) GCC_DIAG_PRAGMA(ignored GCC_DIAG_JOINSTR(-W,x))
 #define GCC_DIAG_POP()		GCC_DIAG_PRAGMA(pop)

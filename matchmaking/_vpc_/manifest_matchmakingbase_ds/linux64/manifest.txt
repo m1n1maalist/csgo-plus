@@ -50,12 +50,6 @@ Release output file:    /home/universe/csgo-plus/matchmaking/steam_datacenterjob
 Containing unity file:  
 PCH file:               
 
-Source file:            /home/universe/csgo-plus/matchmaking/steam_lobbyapi.cpp
-Debug output file:      /home/universe/csgo-plus/matchmaking/steam_lobbyapi.cpp
-Release output file:    /home/universe/csgo-plus/matchmaking/steam_lobbyapi.cpp
-Containing unity file:  
-PCH file:               
-
 Source file:            /home/universe/csgo-plus/matchmaking/x360_xlsp_cmd.cpp
 Debug output file:      /home/universe/csgo-plus/matchmaking/x360_xlsp_cmd.cpp
 Release output file:    /home/universe/csgo-plus/matchmaking/x360_xlsp_cmd.cpp

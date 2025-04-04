@@ -7,6 +7,9 @@
 //===========================================================================//
 
 #pragma warning (disable : 4514)
+#if defined(POSIX)
+#pragma GCC diagnostic ignored "-Wformat"
+#endif
 
 #include "utlbuffer.h"
 #include <stdio.h>

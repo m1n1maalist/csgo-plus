@@ -63,10 +63,11 @@ $Project
 		  $File	"$ROOTSCRIPT"
 	 }
 
-	$Folder	"Link Libraries" [$LINUXALL&&!$DEDICATED]
-	{
-		$ImpLibExternal	"$SRCDIR/thirdparty/gperftools-2.0/.libs/tcmalloc_minimal" [$LINUX32]
-		$ImpLibExternal	"$SRCDIR/thirdparty/gperftools-2.0/.libs/x86_64/tcmalloc_minimal" [$LINUX64]
-	}
+	// TODO: Compile this.
+	//$Folder	"Link Libraries" [$LINUXALL&&!$DEDICATED]
+	//{
+	//	$ImpLibExternal	"$SRCDIR/thirdparty/gperftools-2.0/.libs/tcmalloc_minimal" [$LINUX32]
+	//	$ImpLibExternal	"$SRCDIR/thirdparty/gperftools-2.0/.libs/x86_64/tcmalloc_minimal" [$LINUX64]
+	//}
 }
 
