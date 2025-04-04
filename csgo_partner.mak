@@ -58,7 +58,7 @@ endif
 all: $(CHROOT_DEPENDENCY)
 	$(MAKE) -f $(lastword $(MAKEFILE_LIST)) -j$(MAKE_JOBS) all-targets
 
-all-targets : appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dedicated_main Dmxloader engine Fgdlib filesystem_stdio gcsdk gcsdk_gc havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics Jpeglib launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem mathlib mathlib_extended matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dbg stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
+all-targets : appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dedicated_main Dmxloader engine Fgdlib filesystem_stdio gcsdk_gc havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dbg stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
 
 
 # Individual projects + dependencies
@@ -79,7 +79,7 @@ bonesetup :
 	@$(ECHO) "Building: bonesetup"
 	@+$(MAKE) -C /home/universe/csgo-plus/bonesetup -f bonesetup_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-bsppack : interfaces lzma mathlib tier0 tier1 tier2 vstdlib 
+bsppack : interfaces lzma tier0 tier1 tier2 vstdlib 
 	@$(ECHO) "Building: bsppack"
 	@+$(MAKE) -C /home/universe/csgo-plus/utils/bsppack -f bsppack_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -91,15 +91,15 @@ choreoobjects :
 	@$(ECHO) "Building: choreoobjects"
 	@+$(MAKE) -C /home/universe/csgo-plus/choreoobjects -f choreoobjects_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-Client_CSGO : bitmap bonesetup Bzip2 choreoobjects Dmxloader gcsdk interfaces Jpeglib mathlib mathlib_extended matsys_controls meshutils particles Raytrace resourcefile tier0 tier1 tier2 tier3 vgui_controls videocfg vpklib vstdlib vtf 
+Client_CSGO : bitmap bonesetup Bzip2 choreoobjects Dmxloader interfaces matsys_controls meshutils particles Raytrace resourcefile tier0 tier1 tier2 tier3 vgui_controls videocfg vpklib vstdlib vtf 
 	@$(ECHO) "Building: Client_CSGO"
 	@+$(MAKE) -C /home/universe/csgo-plus/game/client -f client_linux64_csgo.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-datacache : interfaces mathlib tier0 tier1 tier2 tier3 vstdlib 
+datacache : interfaces tier0 tier1 tier2 tier3 vstdlib 
 	@$(ECHO) "Building: datacache"
 	@+$(MAKE) -C /home/universe/csgo-plus/datacache -f datacache_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-Dedicated : appframework Dmxloader interfaces mathlib tier0 tier1 tier2 tier3 vpklib vstdlib 
+Dedicated : appframework Dmxloader interfaces tier0 tier1 tier2 tier3 vpklib vstdlib 
 	@$(ECHO) "Building: Dedicated"
 	@+$(MAKE) -C /home/universe/csgo-plus/dedicated -f dedicated_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -111,7 +111,7 @@ Dmxloader :
 	@$(ECHO) "Building: Dmxloader"
 	@+$(MAKE) -C /home/universe/csgo-plus/dmxloader -f dmxloader_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-engine : appframework bitmap Bzip2 Dmxloader interfaces Jpeglib mathlib matsys_controls quickhull soundsystem_lowlevel tier0 tier1 tier2 tier3 vgui_controls videocfg vstdlib vtf 
+engine : appframework bitmap Bzip2 Dmxloader interfaces matsys_controls quickhull soundsystem_lowlevel tier0 tier1 tier2 tier3 vgui_controls videocfg vstdlib vtf 
 	@$(ECHO) "Building: engine"
 	@+$(MAKE) -C /home/universe/csgo-plus/engine -f engine_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -122,10 +122,6 @@ Fgdlib :
 filesystem_stdio : interfaces tier0 tier1 tier2 vpklib vstdlib 
 	@$(ECHO) "Building: filesystem_stdio"
 	@+$(MAKE) -C /home/universe/csgo-plus/filesystem -f filesystem_stdio_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
-
-gcsdk : 
-	@$(ECHO) "Building: gcsdk"
-	@+$(MAKE) -C /home/universe/csgo-plus/gcsdk -f gcsdk_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
 gcsdk_gc : 
 	@$(ECHO) "Building: gcsdk_gc"
@@ -143,7 +139,7 @@ hk_math :
 	@$(ECHO) "Building: hk_math"
 	@+$(MAKE) -C /home/universe/csgo-plus/ivp/havana/havok/hk_math -f hk_math_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-inputsystem : interfaces mathlib tier0 tier1 tier2 vstdlib 
+inputsystem : interfaces tier0 tier1 tier2 vstdlib 
 	@$(ECHO) "Building: inputsystem"
 	@+$(MAKE) -C /home/universe/csgo-plus/inputsystem -f inputsystem_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -158,10 +154,6 @@ ivp_compactbuilder :
 ivp_physics : 
 	@$(ECHO) "Building: ivp_physics"
 	@+$(MAKE) -C /home/universe/csgo-plus/ivp/ivp_physics -f ivp_physics_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
-
-Jpeglib : 
-	@$(ECHO) "Building: Jpeglib"
-	@+$(MAKE) -C /home/universe/csgo-plus/utils/jpeglib -f jpeglib_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
 launcher : appframework interfaces tier0 tier1 tier2 tier3 vstdlib 
 	@$(ECHO) "Building: launcher"
@@ -179,33 +171,25 @@ lzma :
 	@$(ECHO) "Building: lzma"
 	@+$(MAKE) -C /home/universe/csgo-plus/utils/lzma -f lzma_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-Matchmaking_CSGO : gcsdk interfaces matchmakingbase mathlib tier0 tier1 tier2 tier3 vstdlib 
+Matchmaking_CSGO : interfaces matchmakingbase tier0 tier1 tier2 tier3 vstdlib 
 	@$(ECHO) "Building: Matchmaking_CSGO"
 	@+$(MAKE) -C /home/universe/csgo-plus/matchmaking -f matchmaking_linux64_csgo.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-Matchmaking_DS_CSGO : gcsdk interfaces matchmakingbase_ds mathlib tier0 tier1 tier2 tier3 vstdlib 
+Matchmaking_DS_CSGO : interfaces matchmakingbase_ds tier0 tier1 tier2 tier3 vstdlib 
 	@$(ECHO) "Building: Matchmaking_DS_CSGO"
 	@+$(MAKE) -C /home/universe/csgo-plus/matchmaking -f matchmaking_ds_linux64_csgo.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-matchmakingbase : gcsdk 
+matchmakingbase : 
 	@$(ECHO) "Building: matchmakingbase"
 	@+$(MAKE) -C /home/universe/csgo-plus/matchmaking -f matchmakingbase_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-matchmakingbase_ds : gcsdk 
+matchmakingbase_ds : 
 	@$(ECHO) "Building: matchmakingbase_ds"
 	@+$(MAKE) -C /home/universe/csgo-plus/matchmaking -f matchmakingbase_ds_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-materialsystem : bitmap interfaces mathlib shaderlib tier0 tier1 tier2 tier3 vstdlib vtf 
+materialsystem : bitmap interfaces shaderlib tier0 tier1 tier2 tier3 vstdlib vtf 
 	@$(ECHO) "Building: materialsystem"
 	@+$(MAKE) -C /home/universe/csgo-plus/materialsystem -f materialsystem_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
-
-mathlib : 
-	@$(ECHO) "Building: mathlib"
-	@+$(MAKE) -C /home/universe/csgo-plus/mathlib -f mathlib_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
-
-mathlib_extended : 
-	@$(ECHO) "Building: mathlib_extended"
-	@+$(MAKE) -C /home/universe/csgo-plus/mathlib -f mathlib_extended_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
 matsys_controls : 
 	@$(ECHO) "Building: matsys_controls"
@@ -235,7 +219,7 @@ responserules_runtime :
 	@$(ECHO) "Building: responserules_runtime"
 	@+$(MAKE) -C /home/universe/csgo-plus/responserules/runtime -f responserules_runtime_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-ScaleformUI : bitmap interfaces mathlib tier0 tier1 tier2 tier3 vstdlib vtf 
+ScaleformUI : bitmap interfaces tier0 tier1 tier2 tier3 vstdlib vtf 
 	@$(ECHO) "Building: ScaleformUI"
 	@+$(MAKE) -C /home/universe/csgo-plus/scaleformui -f scaleformui_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -243,11 +227,11 @@ SceneFileCache : interfaces tier0 tier1 vstdlib
 	@$(ECHO) "Building: SceneFileCache"
 	@+$(MAKE) -C /home/universe/csgo-plus/scenefilecache -f scenefilecache_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-Server_CSGO : bitmap bonesetup choreoobjects Dmxloader gcsdk interfaces mathlib mathlib_extended particles responserules_runtime tier0 tier1 tier2 tier3 vgui_controls vstdlib 
+Server_CSGO : bitmap bonesetup choreoobjects Dmxloader interfaces particles responserules_runtime tier0 tier1 tier2 tier3 vgui_controls vstdlib 
 	@$(ECHO) "Building: Server_CSGO"
 	@+$(MAKE) -C /home/universe/csgo-plus/game/server -f server_linux64_csgo.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-shaderapidx9 : bitmap Bzip2 interfaces mathlib tier0 tier1 tier2 videocfg vstdlib vtf 
+shaderapidx9 : bitmap Bzip2 interfaces tier0 tier1 tier2 videocfg vstdlib vtf 
 	@$(ECHO) "Building: shaderapidx9"
 	@+$(MAKE) -C /home/universe/csgo-plus/materialsystem/shaderapidx9 -f shaderapidx9_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -271,11 +255,11 @@ stdshader_dbg : interfaces tier0 tier1 vstdlib
 	@$(ECHO) "Building: stdshader_dbg"
 	@+$(MAKE) -C /home/universe/csgo-plus/materialsystem/stdshaders -f stdshader_dbg_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-stdshader_dx9 : interfaces mathlib shaderlib tier0 tier1 vstdlib 
+stdshader_dx9 : interfaces shaderlib tier0 tier1 vstdlib 
 	@$(ECHO) "Building: stdshader_dx9"
 	@+$(MAKE) -C /home/universe/csgo-plus/materialsystem/stdshaders -f stdshader_dx9_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-studiorender : bitmap interfaces mathlib tier0 tier1 tier2 tier3 vstdlib 
+studiorender : bitmap interfaces tier0 tier1 tier2 tier3 vstdlib 
 	@$(ECHO) "Building: studiorender"
 	@+$(MAKE) -C /home/universe/csgo-plus/studiorender -f studiorender_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -315,7 +299,7 @@ vgui2 : interfaces tier0 tier1 tier2 tier3 vgui_surfacelib vstdlib
 	@$(ECHO) "Building: vgui2"
 	@+$(MAKE) -C /home/universe/csgo-plus/vgui2/src -f vgui_dll_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-vguimatsurface : bitmap Dmxloader interfaces mathlib tier0 tier1 tier2 tier3 vgui_controls vgui_surfacelib vstdlib 
+vguimatsurface : bitmap Dmxloader interfaces tier0 tier1 tier2 tier3 vgui_controls vgui_surfacelib vstdlib 
 	@$(ECHO) "Building: vguimatsurface"
 	@+$(MAKE) -C /home/universe/csgo-plus/vguimatsurface -f vguimatsurface_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -323,7 +307,7 @@ videocfg :
 	@$(ECHO) "Building: videocfg"
 	@+$(MAKE) -C /home/universe/csgo-plus/videocfg -f videocfg_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-vphysics : havana_constraints hk_base hk_math interfaces ivp_compactbuilder ivp_physics mathlib tier0 tier1 tier2 vstdlib 
+vphysics : havana_constraints hk_base hk_math interfaces ivp_compactbuilder ivp_physics tier0 tier1 tier2 vstdlib 
 	@$(ECHO) "Building: vphysics"
 	@+$(MAKE) -C /home/universe/csgo-plus/vphysics -f vphysics_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -331,7 +315,7 @@ vpklib :
 	@$(ECHO) "Building: vpklib"
 	@+$(MAKE) -C /home/universe/csgo-plus/vpklib -f vpklib_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
-vscript : interfaces mathlib tier0 tier1 vstdlib 
+vscript : interfaces tier0 tier1 vstdlib 
 	@$(ECHO) "Building: vscript"
 	@+$(MAKE) -C /home/universe/csgo-plus/vscript -f vscript_linux64.mak $(CLEANPARAM) SHELL=$(SHELL)
 
@@ -545,24 +529,12 @@ TAGS:
 	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
 	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
 	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
 
 
 
 # Mark all the projects as phony or else make will see the directories by the same name and think certain targets 
 
-.PHONY: TAGS all all-targets showtargets regen showregen clean cleantargets cleanandremove relink appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dedicated_main Dmxloader engine Fgdlib filesystem_stdio gcsdk gcsdk_gc havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics Jpeglib launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem mathlib mathlib_extended matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dbg stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
+.PHONY: TAGS all all-targets showtargets regen showregen clean cleantargets cleanandremove relink appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dedicated_main Dmxloader engine Fgdlib filesystem_stdio gcsdk_gc havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dbg stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
 
 
 
@@ -619,7 +591,6 @@ showtargets:
 	$(ECHO) 'engine' && \
 	$(ECHO) 'Fgdlib' && \
 	$(ECHO) 'filesystem_stdio' && \
-	$(ECHO) 'gcsdk' && \
 	$(ECHO) 'gcsdk_gc' && \
 	$(ECHO) 'havana_constraints' && \
 	$(ECHO) 'hk_base' && \
@@ -628,7 +599,6 @@ showtargets:
 	$(ECHO) 'interfaces' && \
 	$(ECHO) 'ivp_compactbuilder' && \
 	$(ECHO) 'ivp_physics' && \
-	$(ECHO) 'Jpeglib' && \
 	$(ECHO) 'launcher' && \
 	$(ECHO) 'launcher_main' && \
 	$(ECHO) 'localize' && \
@@ -638,8 +608,6 @@ showtargets:
 	$(ECHO) 'matchmakingbase' && \
 	$(ECHO) 'matchmakingbase_ds' && \
 	$(ECHO) 'materialsystem' && \
-	$(ECHO) 'mathlib' && \
-	$(ECHO) 'mathlib_extended' && \
 	$(ECHO) 'matsys_controls' && \
 	$(ECHO) 'meshutils' && \
 	$(ECHO) 'particles' && \
@@ -681,14 +649,14 @@ showtargets:
 
 
 regen: 
-	devtools/bin/vpc_linux /csgo +game -togl /linux64 /mksln csgo_partner 
+	devtools/bin/vpc_linux /csgo +game -togl -mathlib -gcsdk -mathlib_extended -jpeglib /linux64 /mksln csgo_partner 
 
 
 # Here's a command to list out all the targets
 
 
 showregen: 
-	@$(ECHO) devtools/bin/vpc_linux /csgo +game -togl /linux64 /mksln csgo_partner 
+	@$(ECHO) devtools/bin/vpc_linux /csgo +game -togl -mathlib -gcsdk -mathlib_extended -jpeglib /linux64 /mksln csgo_partner 
 
 ifdef CHROOT_DEPENDENCY
 $(CHROOT_DEPENDENCY): $(CHROOT_TIMESTAMP_FILE)

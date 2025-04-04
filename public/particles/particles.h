@@ -1818,8 +1818,11 @@ public:
 	void SwapPosAndPrevPos( void );
 
 	void SetNActiveParticles( int nCount );
+#if defined( WIN32)
 	void KillParticle(int nPidx, unsigned int nFlags = 0);
-
+#else
+	void KillParticle(unsigned int nPidx, unsigned int nFlags = 0);
+#endif
 	void StopEmission( bool bInfiniteOnly = false, bool bRemoveAllParticles = false, bool bWakeOnStop = false, bool bPlayEndCap = false );
 	void StartEmission( bool bInfiniteOnly = false );
 	void SetDormant( bool bDormant );
@@ -2867,8 +2870,11 @@ inline bool CParticleCollection::IsValidAttributePtr( int nAttribute, const void
 	return ( pPtr <= pMaxPtr );
 }
 
-
+#if defined(WIN32)
 FORCEINLINE void CParticleCollection::KillParticle( int nPidx, unsigned int nKillFlags )
+#else
+FORCEINLINE void CParticleCollection::KillParticle( unsigned int nPidx, unsigned int nKillFlags )
+#endif
 {
 	// add a particle to the sorted kill list. entries must be added in sorted order.
 	// within a particle operator, this is safe to call. Outside of one, you have to call
