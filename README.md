@@ -1,4 +1,6 @@
-# CSGO+
+# Counter-Strike: Global Offensive Plus
+
+![LOGO](https://github.com/user-attachments/assets/30e4751c-be55-4982-8d88-bd307feefb26)
 > [!WARNING]
 > This project is still a work-in-progress, and not ready to use. This also contains multiple bugs, and doesn't work on some Linux distributions and Operating systems [information here](#supported-oses)
 
