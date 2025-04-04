@@ -56,12 +56,6 @@ Release output file:    /home/universe/Downloads/cstrike15_src/matchmaking/steam
 Containing unity file:  
 PCH file:               
 
-Source file:            /home/universe/Downloads/cstrike15_src/matchmaking/steam_lobbyapi.cpp
-Debug output file:      /home/universe/Downloads/cstrike15_src/matchmaking/steam_lobbyapi.cpp
-Release output file:    /home/universe/Downloads/cstrike15_src/matchmaking/steam_lobbyapi.cpp
-Containing unity file:  
-PCH file:               
-
 Source file:            /home/universe/Downloads/cstrike15_src/matchmaking/x360_xlsp_cmd.cpp
 Debug output file:      /home/universe/Downloads/cstrike15_src/matchmaking/x360_xlsp_cmd.cpp
 Release output file:    /home/universe/Downloads/cstrike15_src/matchmaking/x360_xlsp_cmd.cpp
