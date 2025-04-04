@@ -19,6 +19,30 @@
 - A: [Yes](https://discord.gg/5Gpr5TSkJ4).
 
 ## Buidling
+Firstly, if you're on an [Arch Linux](https://archlinux.org/download/)-based distribution, install the following dependencies:
+```bash
+pacman -S apt base-devel dpkg gcc g++
+```
+But if you're on [Debian Linux](https://www.debian.org/distrib/)-based distribution, install the following dependencies:
+```bash
+# If you're on x86 run;
+apt-get install build-essential
+# If you're on x86_64 run;
+sudo apt-get install gcc-multilib g++-multilib
+```
+Secondly, as `root`, go to the `/` directory, and run the following commands:
+```bash
+mkdir -p /valve/bin64/
+cd /valve/bin64/
+ln -s $(which ar) ar
+ln -s $(which gcc) gcc-4.6
+ln -s $(which g++) g++-4.6
+#this part comes from cryptopp
+mkdir -p /valve/steam-runtime/bin
+cd /valve/steam-runtime/bin
+ln -s $(which g++) g++
+ln -s $(which gcc) gcc
+```
 
 ### Building (Linux)
 1. Firstly, add this script under the name "p4" in /usr/local/bin:
@@ -37,8 +61,6 @@ echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 4. And finally run `emrun --no_browser --port 8080 .`
 
 ## Supported OSes
-> [!NOTE]
-> This is support OSes for compiling, not OSes that can run the game.
 
 |  OS/Distro | Supported | 					Known Bugs			    	   |
 | -----------| -------   | --------------------------------------------------------------------------------|
@@ -46,3 +68,5 @@ echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 | Arch Linux | Yes        | |
 | Debian     | Yes       | Few C++ errors, can be fixed easily						   |
 | FreeBSD    | No	 | FreeBSD isn't supported natively in the Source Engine.		           |
+
+
