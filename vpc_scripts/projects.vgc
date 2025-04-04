@@ -1010,6 +1010,23 @@ $Project "p4lib_staticlink"
 	"p4lib/p4lib_staticlink.vpc" [$WINDOWS]
 }
 
+// FIXME why doesn't source2 define this?
+// TODO: Decompile.
+$Project "panoramamessages"
+{
+	"panorama/panoramamessages.vpc" [$SOURCE_PANORAMA_FIXME]
+}
+
+$Project "panorama"
+{
+	"panorama/panorama.vpc" [$SOURCE_PANORAMA_FIXME]
+}
+
+$Project "panorama_client"
+{
+	"panorama/panorama_client.vpc" [$SOURCE_PANORAMA_FIXME]
+}
+
 $Project "particle_import"
 {
 	"utils/particle_import/particle_import.vpc" [$WINDOWS]

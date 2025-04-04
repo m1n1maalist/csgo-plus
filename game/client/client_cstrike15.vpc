@@ -36,10 +36,11 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories		"$BASE;$SRCDIR\game\shared\cstrike15\control,.\cstrike15,.\cstrike15\control,.\cstrike15\VGUI,$SRCDIR\game\shared\cstrike15;$SRCDIR\game\client\cstrike15\gameui;.\cstrike15\Scaleform"
-		$PreprocessorDefinitions		"$BASE;CSTRIKE_CLIENT_DLL;CSTRIKE_DLL;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;VERSION_SAFE_STEAM_API_INTERFACES;INCLUDE_SCALEFORM;USE_ECONOMY_FEATURES"
+		$PreprocessorDefinitions		"$BASE;CSTRIKE_CLIENT_DLL;CSTRIKE_DLL;GAMEUI_EMBEDDED;GAMEUI_EXPORTS;VERSION_SAFE_STEAM_API_INTERFACES;INCLUDE_PANORAMA;USE_ECONOMY_FEATURES"
 		$PreprocessorDefinitions		"$BASE;ALLOW_TEXT_MODE=1" [$CSTRIKE_TRUNK_BUILD||$CSTRIKE_STAGING_BUILD]
 
 		$ForceIncludes				"tier0\platform.h" [$WINDOWS||$POSIX]
+		$PreprocessorDefinitions		"$BASE;SOURCE2_PANORAMA;SOURCE_PANORAMA_FIXME"
 	}
 
 	$Linker
