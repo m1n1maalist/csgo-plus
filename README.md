@@ -43,6 +43,6 @@ echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 |  OS/Distro | Supported | 					Known Bugs			    	   |
 | -----------| -------   | --------------------------------------------------------------------------------|
 | Windows    | Untested  | Untested					    				   |
-| Arch Linux | No        | Seems like there are issues relating to `ccache`, maybe just a dependency issue |
+| Arch Linux | Yes        | |
 | Debian     | Yes       | Few C++ errors, can be fixed easily						   |
 | FreeBSD    | No	 | FreeBSD isn't supported natively in the Source Engine.		           |

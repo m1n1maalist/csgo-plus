@@ -9,6 +9,10 @@
 #include "p4sln.h"
 #include "ilaunchabledll.h"
 
+#if defined (WEB)
+#define EMSCRIPTEN
+#endif
+
 DEFINE_LOGGING_CHANNEL_NO_TAGS( LOG_VPC, "VPC" );
 
 CVPC						*g_pVPC;
@@ -1923,6 +1927,8 @@ void CVPC::SetupGenerators()
 	extern IBaseProjectGenerator	*GetWin32ProjectGenerator();
 	extern IBaseProjectGenerator	*GetWin32ProjectGenerator_2010();
 	extern IBaseProjectGenerator	*GetMakefileProjectGenerator();
+//	TODO: Create custom Emscripten generator, so it can work on Windows.
+//	extern IBaseProjectGenerator	*GetEmscriptenProjectGenerator();
 	extern IBaseProjectGenerator	*GetPS3ProjectGenerator();
 	extern IBaseProjectGenerator	*GetXbox360ProjectGenerator();
 	extern IBaseProjectGenerator	*GetXbox360ProjectGenerator_2010();
@@ -1930,6 +1936,8 @@ void CVPC::SetupGenerators()
 #if defined( WIN32 )
 	// Under Windows we have the ability to generate makefiles so if they specified a linux config then use the makefile generator.
 	bool bUseMakefile = IsPlatformDefined( "LINUX" );
+	bool bUseEmscripten = IsPlatformDefined( "EMSCRIPTEN" ); 
+	
 	if ( bUseMakefile )
 	{
 		Log_Msg( LOG_VPC, "\n** Detected Linux platform. Using Makefile generator.\n" );
@@ -1941,7 +1949,28 @@ void CVPC::SetupGenerators()
 		bUseMakefile = ( pConditional && pConditional->m_bDefined );
 	}
 
+#if defined(EMSCRIPTEN)
+	if ( bUseEmscripten )
+	{
+		Log_Msg( LOG_VPC, "\n** Detected Emscripten in VPC compiler. Using EM++.\n"  );
+	}
+	else
+	{
+		conditional_t *pConditional = FindOrCreateConditional( "DEDICATED", false, CONDITIONAL_CUSTOM  );
+		bUseEmscripten = ( pConditional && pConditional->m_bDefined );
+	}
+#endif
+
+#if defined(EMSCRIPTEN)
+	if ( bUseEmscripten )
+	{
+		m_ProjectGenerator = GetMakefileProjectGenerator();
+		m_pSolutionGenerator = &g_PosixSolutionGenerator;
+	}
+	else if ( bUseMakefile )
+#else
 	if ( bUseMakefile )
+#endif
 	{
 		m_pProjectGenerator = GetMakefileProjectGenerator();
 		m_pSolutionGenerator = &g_PosixSolutionGenerator;
