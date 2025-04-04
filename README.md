@@ -2,21 +2,11 @@
 > [!WARNING]
 > This project is still a work-in-progress, and not ready to use. This also contains multiple bugs, and doesn't work on some Linux distributions and Operating systems [information here](#supported-oses)
 
-**CSGO+** is an attempt of modernizing the CSGO leak from April 22nd 2020.
-## Features
-- Fixed some VPC groups.
-- Escripten port.
+## What is CSGO+?
+**CSGO+** is basically an attempt of modernizing the CSGO leak from April 22nd 2020. This is targetting almost every platform from Linux to the Web. Some notable features is native **Web support**.
 
-## Planned Features
-- Deferred Lighting
-- PBR shaders.
-- Android support.
-- Forward+ Renderer
-- Vulkan Support.
-- KDevelop support (GUI compiler, instead of using CLI makefiles.)
-- Panorama UI recreation.
-- Replace with CMake or any other build system.
-- FreeBSD support.
+## Features
+- **Web support** - You can play CSGO on any platform thanks to this!
 
 ## Buidling
 
@@ -37,6 +27,9 @@ echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 4. And finally run `emrun --no_browser --port 8080 .`
 
 ## Supported OSes
+> [!NOTE]
+> This is support OSes for compiling, not OSes that can run the game.
+
 |  OS/Distro | Supported | 					Known Bugs			    	   |
 | -----------| -------   | --------------------------------------------------------------------------------|
 | Windows    | Untested  | Untested					    				   |
