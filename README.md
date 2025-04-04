@@ -67,5 +67,5 @@ echo "$@" >> /tmp/p4req.txt # logs arguments passed to a file.
 | Arch Linux | Yes        | |
 | Debian     | Yes       | Few C++ errors, can be fixed easily						   |
 | FreeBSD    | No	 | FreeBSD isn't supported natively in the Source Engine.		           |
-
+| Android (Termux) | Untested | Untested |
 
