@@ -16,6 +16,6 @@ jobs:
     - name: Get Git submodule update
       run: git submodule update --remote
     - name: Run Valve Project creator
-      run: cd src; ./CreateSolution
+      run: cd src; ./CreateSolution.sh
     - name: Compile.
       run: make -f *.mak -j1
