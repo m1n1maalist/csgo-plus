@@ -1,0 +1,21 @@
+name: Compile for Linux
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Get Git submodule update
+      run: git submodule update --remote
+    - name: Run Valve Project creator
+      run: cd src; ./CreateSolution
+    - name: Compile.
+      run: make -f *.mak -j1
