@@ -9,6 +9,7 @@
 
 ## Features
 - **Web support** - You can play CSGO on any platform thanks to this!
+- **ImGui support** - A bloat-free, and clean alternative to Valve's VGui.
 
 ## FAQ
 - Q: What are some supported Operating Systems?
