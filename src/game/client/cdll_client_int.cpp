@@ -4,6 +4,7 @@
 //===============================================================================
 
 #include "cbase.h"
+#include "imgui/imgui_system.h"
 #include <crtmemdebug.h>
 #include "vgui_int.h"
 #include "clientmode.h"
@@ -1454,6 +1455,7 @@ int CHLClient::Init( CreateInterfaceFn appSystemFactory, CGlobalVarsBase *pGloba
 	STEAMWORKS_TESTSECRETALWAYS();
 	STEAMWORKS_SELFCHECK();
 
+	g_pImguiSystem->Init();
 	COM_TimestampedLog( "ClientDLL factories - Start" );
 	// We aren't happy unless we get all of our interfaces.
 	// please don't collapse this into one monolithic boolean expression (impossible to debug)
@@ -1841,7 +1843,7 @@ CEG_NOINLINE void CHLClient::Shutdown( void )
 	DisconnectTier2Libraries( );
 	ConVar_Unregister();
 	DisconnectTier1Libraries( );
-
+	g_pImguiSystem->Shutdown();
 	gameeventmanager = NULL;
 }
 
