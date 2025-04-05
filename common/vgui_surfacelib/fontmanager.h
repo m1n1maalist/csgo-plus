@@ -19,7 +19,7 @@
 #include "vguifont.h"
 
 #ifdef LINUX
-#include <ft2build.h>
+#include "ft2build.h"
 #include FT_FREETYPE_H
 typedef void *(*FontDataHelper)( const char *pchFontName, int &size );
 #endif

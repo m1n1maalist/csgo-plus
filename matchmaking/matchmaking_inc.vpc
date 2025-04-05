@@ -65,7 +65,8 @@ $Project
 		$Lib	tier3
 		$ImplibExternal	steam_api							[ ( $WIN32 || $POSIX || $PS3 ) && !$NO_STEAM ]
 		$ImplibExternal	steam_api64							[ $WIN64 && !$NO_STEAM ]
-		$Lib	gcsdk  [!$X360 && !$PS3]
+//		$Lib	gcsdk  [!$X360 && !$PS3]
+
 	}
 }
 

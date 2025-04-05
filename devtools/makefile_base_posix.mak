@@ -107,7 +107,6 @@ endif
 ARCH_FLAGS = 
 BUILDING_MULTI_ARCH = 0
 CPPFLAGS = $(DEFINES) $(FORCEINCLUDES) $(addprefix -I, $(abspath $(INCLUDEDIRS) ))
-
 ifeq ($(TARGET_PLATFORM),linux64)
 	CPPFLAGS += -fPIC
 endif
@@ -118,7 +117,7 @@ CFLAGS = $(ARCH_FLAGS) $(CPPFLAGS) $(WARN_FLAGS) -fvisibility=$(SymbolVisibility
 # turns these into warnings in gcc, and -Wno-c++11-narrowing suppresses them entirely in clang 3.1+.
 
 ifeq ($(OS),Linux)
-	CXXFLAGS = $(CFLAGS) -std=gnu++0x -fpermissive
+	CXXFLAGS = $(CFLAGS) -std=gnu++0x -Wno-pointer-arith -Wno-conversion -fpermissive
 else
 	CXXFLAGS = $(CFLAGS) -std=gnu++11 -stdlib=libc++ -Wno-c++11-narrowing -Wno-dangling-else
 endif

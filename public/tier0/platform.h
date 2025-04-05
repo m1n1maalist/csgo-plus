@@ -23,8 +23,7 @@
 #define GCC_DIAG_PRAGMA(x)	GCC_DIAG_DO_PRAGMA(GCC diagnostic x)
 
 #pragma GCC diagnostic ignored "-Wignored-attributes"
-// RISKY!!
-//#pragma GCC diagnostic ignored "-fPermissive"
+// HACKY!!
 
 #define GCC_DIAG_PUSH_OFF(x)	GCC_DIAG_PRAGMA(push) GCC_DIAG_PRAGMA(ignored GCC_DIAG_JOINSTR(-W,x))
 #define GCC_DIAG_POP()		GCC_DIAG_PRAGMA(pop)

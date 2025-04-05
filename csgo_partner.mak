@@ -58,7 +58,7 @@ endif
 all: $(CHROOT_DEPENDENCY)
 	$(MAKE) -f $(lastword $(MAKEFILE_LIST)) -j$(MAKE_JOBS) all-targets
 
-all-targets : appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dmxloader engine filesystem_stdio havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dbg stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
+all-targets : appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dmxloader engine filesystem_stdio havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
 
 
 # Individual projects + dependencies
@@ -238,10 +238,6 @@ soundemittersystem : interfaces tier0 tier1 tier2 vstdlib
 soundsystem_lowlevel : 
 	@$(ECHO) "Building: soundsystem_lowlevel"
 	@+$(MAKE) -C /home/universe/csgo-plus/soundsystem/lowlevel -f soundsystem_lowlevel_linux64_srv.mak $(CLEANPARAM) SHELL=$(SHELL)
-
-stdshader_dbg : interfaces tier0 tier1 vstdlib 
-	@$(ECHO) "Building: stdshader_dbg"
-	@+$(MAKE) -C /home/universe/csgo-plus/materialsystem/stdshaders -f stdshader_dbg_linux64_srv.mak $(CLEANPARAM) SHELL=$(SHELL)
 
 stdshader_dx9 : interfaces shaderlib tier0 tier1 vstdlib 
 	@$(ECHO) "Building: stdshader_dx9"
@@ -505,15 +501,12 @@ TAGS:
 	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
 	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
 	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.cpp' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.h' -print0 | $(XARGS) -r0 $(ETAGS) --language=c++ --declarations --ignore-indentation --append
-	@$(FIND)  -name '*.c' -print0 | $(XARGS) -r0 $(ETAGS) --declarations --ignore-indentation --append
 
 
 
 # Mark all the projects as phony or else make will see the directories by the same name and think certain targets 
 
-.PHONY: TAGS all all-targets showtargets regen showregen clean cleantargets cleanandremove relink appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dmxloader engine filesystem_stdio havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dbg stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
+.PHONY: TAGS all all-targets showtargets regen showregen clean cleantargets cleanandremove relink appframework bitmap bitmap_byteswap bonesetup bsppack Bzip2 choreoobjects Client_CSGO datacache Dedicated Dmxloader engine filesystem_stdio havana_constraints hk_base hk_math inputsystem interfaces ivp_compactbuilder ivp_physics launcher launcher_main localize lzma Matchmaking_CSGO Matchmaking_DS_CSGO matchmakingbase matchmakingbase_ds materialsystem matsys_controls meshutils particles quickhull Raytrace resourcefile responserules_runtime ScaleformUI SceneFileCache Server_CSGO shaderapidx9 shaderapiempty shaderlib soundemittersystem soundsystem_lowlevel stdshader_dx9 studiorender tier0 tier1 tier2 tier3 valve_avi VAudio_Miles vgui_controls vgui_surfacelib vgui2 vguimatsurface videocfg vphysics vpklib vscript vstdlib vtf 
 
 
 
@@ -599,7 +592,6 @@ showtargets:
 	$(ECHO) 'shaderlib' && \
 	$(ECHO) 'soundemittersystem' && \
 	$(ECHO) 'soundsystem_lowlevel' && \
-	$(ECHO) 'stdshader_dbg' && \
 	$(ECHO) 'stdshader_dx9' && \
 	$(ECHO) 'studiorender' && \
 	$(ECHO) 'tier0' && \
@@ -625,14 +617,14 @@ showtargets:
 
 
 regen: 
-	devtools/bin/vpc_linux /csgo +game -togl -mathlib -gcsdk -mathlib_extended -jpeglib -dedicated -dedicated_main -gcsdk_gc /linux64 /mksln csgo_partner 
+	devtools/bin/vpc_linux /csgo /no_steam +game -togl -mathlib -gcsdk -mathlib_extended -jpeglib -dedicated -dedicated_main -datamodel -stdshader_dbg -game_controls -movieobjects /linux64 /mksln csgo_partner 
 
 
 # Here's a command to list out all the targets
 
 
 showregen: 
-	@$(ECHO) devtools/bin/vpc_linux /csgo +game -togl -mathlib -gcsdk -mathlib_extended -jpeglib -dedicated -dedicated_main -gcsdk_gc /linux64 /mksln csgo_partner 
+	@$(ECHO) devtools/bin/vpc_linux /csgo /no_steam +game -togl -mathlib -gcsdk -mathlib_extended -jpeglib -dedicated -dedicated_main -datamodel -stdshader_dbg -game_controls -movieobjects /linux64 /mksln csgo_partner 
 
 ifdef CHROOT_DEPENDENCY
 $(CHROOT_DEPENDENCY): $(CHROOT_TIMESTAMP_FILE)
