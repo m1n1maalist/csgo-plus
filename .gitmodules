@@ -1,6 +1,6 @@
-[submodule "ivp"]
-	path = ivp
+[submodule "src/ivp"]
+	path = src/ivp
 	url = https://github.com/nillerusr/source-physics
-[submodule "external/v8"]
-	path = external/v8
+[submodule "src/external/v8"]
+	path = src/external/v8
 	url = https://github.com/v8/v8
