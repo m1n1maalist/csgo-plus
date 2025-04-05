@@ -17,7 +17,7 @@ $include "$SRCDIR\vpc_scripts\source_dll_base.vpc"
 $include "$SRCDIR\vpc_scripts\protobuf_builder.vpc"
 $include "$SRCDIR\vpc_scripts\netmessages_include.vpc"
 $include "$SRCDIR\vpc_scripts\networkbasetypes_include.vpc"
-
+$include "$SRCDIR\imgui\imgui_system.vpc"
 $CustomBuildStep "nut"
 {
 	$CommandLine	"$SRCDIR\devtools\srcsrv\perl\bin\perl.exe $SRCDIR\devtools\bin\texttoarray.pl $(InputPath) g_Script_$(InputName)> $(IntDir)\$(InputName)_nut.h" [$WINDOWS]
